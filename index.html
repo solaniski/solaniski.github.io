@@ -1,1 +1,530 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .wf-force-outline-none[tabindex="-1"]:focus {
+            outline: none;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>The Secret of the Nile - Solicomics</title>
+    <meta content="Un grupo de arqueólogos se encuentran cerca del río Nilo excavando en una antigua necrópolis, cuando uno de los miembros desaparece misteriosamente, resuelve este misterio y ayúdale a encontrar la salida." name="description">
+    <meta content="The Secret of the Nile - Solicomics" property="og:title">
+    <meta content="Un grupo de arqueólogos se encuentran cerca del río Nilo excavando en una antigua necrópolis, cuando uno de los miembros desaparece misteriosamente, resuelve este misterio y ayúdale a encontrar la salida." property="og:description">
+    <meta content="./assets/images/social-share.jpg" property="og:image">
+    <meta content="The Secret of the Nile - Solicomics" property="twitter:title">
+    <meta content="Un grupo de arqueólogos se encuentran cerca del río Nilo excavando en una antigua necrópolis, cuando uno de los miembros desaparece misteriosamente, resuelve este misterio y ayúdale a encontrar la salida." property="twitter:description">
+    <meta content="./assets/images/social-share.jpg" property="twitter:image">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="./assets/css/styles.css" rel="stylesheet" type="text/css">
+
+    <link href="./assets/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="./assets/images/appicon.png" rel="apple-touch-icon">
+
+    <style>
+
+        .popUP{
+            position: fixed;
+            background-color: black;
+            z-index: 99;
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
+
+        .enter__story{
+            margin: 0 auto;
+            max-width: 66%;
+        }
+
+        .enter__story a{
+            color: #df9426;
+        }
+
+        #story{
+            display: none;
+        }
+
+        #scores{
+            display: none;
+        }
+
+        #credits{
+            display: none;
+        }
+
+        #welcome{
+            display: revert;
+        }
+
+        #mainRoom{
+            display: none;
+        }
+
+        #leftRoom{
+            display: none;
+        }
+
+        #centerRoom{
+            display: none;
+        }
+
+        #rightRoom{
+            display: none;
+        }
+
+        a.times img{
+            width: 40px;
+        }
+
+        a.times{
+            text-align: right;
+            width: 70%;
+            display: block;
+        }
+
+        #mainRoom .background{
+            background-image: url("./assets/images/main-room.jpg");
+            background-position: 0% 50%;
+        }
+
+        #leftRoom .background{
+            background-image: url("./assets/images/first-room.jpg");
+            background-position: 0% 50%;
+        }
+
+        #centerRoom .background{
+            background-image: url("./assets/images/second-room.jpg");
+            background-position: 0% 50%;
+        }
+
+        #rightRoom .background{
+            background-image: url("./assets/images/third-room.jpg");
+            background-position: 0% 50%;
+        }
+
+        h5{
+            line-height: 4;
+        }
+
+    </style>
+
+</head>
+
+<body data-scroll-time="0.25" class="body">
+
+    <div>
+        <audio id="music" loop autoplay>
+            <source src="./assets/sounds/DesertCity.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="mainRoomMusic" loop autoplay>
+            <source src="./assets/sounds/ComfortableMystery.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="leftRoomMusic" loop autoplay>
+            <source src="./assets/sounds/AncientRite.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="centerRoomMusic" loop autoplay>
+            <source src="./assets/sounds/MysteryBazaar.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="rightRoomMusic" loop autoplay>
+            <source src="./assets/sounds/MysterySting.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+    
+    <!-- Página de inicio -->
+    <div id="welcome" class="wrap">
+
+        <div style="display:flex" class="enter">
+            
+            <!-- Cuenta la historia del juego antes de empezar -->
+            <div id="story" class="popUP">
+                <div>
+                    <p class="enter__story">
+                        Egipto 1965
+                        <br><br>
+                        Un grupo de arqueólogos se encuentran cerca del río Nilo excavando en una antigua necrópolis.
+                        <br><br>
+                        Emmanuel Morerau, un joven e inexperto arqueólogo en prácticas se separa del grupo al ver algo que brillaba cerca de la orilla.
+                        <br><br>
+                        Cuando se acercó, vio que era un antiguo dije en forma de escarabajo, al intentar atraparlo activó un antiguo mecanismo que llevaba milenios en letargo.
+                        <br><br>
+                        Una compuerta se abrió bajo los pies de Emmanuel, el cual cayó en una cámara secreta, la compuerta se cerró y nadie se percató de lo acontecido.
+                        <br><br>
+                        ¿Serás capaz de ayudar a Emmanuel?
+                        <br><br>
+                        Haz frente a los acertijos y encuentra la manera de salir de la cámara.
+                    </p>
+                    <br><br>
+                    <a href="javascript:void(0)" class="contest-button is--skip w-inline-block">
+                        <img src="./assets/images/continue.svg" onclick="showPopUp('mainRoom')" loading="lazy" alt="" class="contest-button__img">
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Muestra las puntuaciones -->
+            <div id="scores" class="popUP">
+                <div>
+                    <a href="javascript:void(0)" class="times">
+                        <img src="./assets/images/times.svg" onclick="hidePopUp('scores')" loading="lazy" alt="" class="contest-button__img">
+                    </a>
+                    <p class="enter__story">
+                        TOP SCORES
+                        <hr style="color: #df9426">
+                    </p>
+                    <br>
+                    <p class="enter__story">
+                        PERSON1 ........... 340 pts
+                        <br>
+                        PERSON2 ........... 310 pts
+                        <br>
+                        PERSON3 ........... 220 pts
+                        <br>
+                        PERSON4 ........... 155 pts
+                        <br>
+                        PERSON5 ........... 120 pts
+                        <br>
+                        PERSON6 ........... 040 pts
+                    </p>
+                    <br><br>
+                    <a href="javascript:void(0)" class="contest-button is--skip w-inline-block">
+                        <img src="./assets/images/close.svg" onclick="hidePopUp('scores')" loading="lazy" alt="" class="contest-button__img">
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Creditos de colaboradores del juego -->
+            <div id="credits" class="popUP">
+                <div>
+                    <a href="javascript:void(0)" class="times">
+                        <img src="./assets/images/times.svg" onclick="hidePopUp('credits')" loading="lazy" alt="" class="contest-button__img">
+                    </a>
+                    <p class="enter__story">
+                        Historia, diseño y maquetación
+                        <br>
+                        <strong>Francisco Solano</strong>
+                        <br><br>
+                        Programación
+                        <br>
+                        <strong>Adrián K. Marquinez</strong>
+                        <br><br>
+                        Imágenes - Freepik
+                        <br>
+                        <a href="https://www.freepik.es/autor/upklyak" target="_blank"><strong>Upklyak</strong></a>
+                        <br>
+                        <a href="https://www.freepik.es/autor/vectorpouch" target="_blank"><strong>Vectorpouch</strong></a>
+                        <br>
+                        <a href="https://www.freepik.es/autor/vectorpocket" target="_blank"><strong>Vectorpocket</strong></a>
+                        <br>
+                        <a href="https://www.freepik.es/autor/macrovector" target="_blank"><strong>Macrovector</strong></a>
+                        <br><br>
+                        Música - incompetech
+                        <br>
+                        <a href="https://incompetech.com/wordpress/author/kevin/" target="_blank"><strong>Kevin McLeod</strong></a>
+                    </p>
+                    <br><br>
+                    <a href="javascript:void(0)" class="contest-button is--skip w-inline-block">
+                        <img src="./assets/images/close.svg" onclick="hidePopUp('credits')" loading="lazy" alt="" class="contest-button__img">
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!--<div class="enter__top">
+                <img src="./assets/images/lights-01.svg"
+                    loading="lazy" alt="" class="enter__lights">
+            </div>-->
+            <div class="enter__middle">
+                <a href="https://solicomics.com/" target="_blank" class="tse w-inline-block">
+                    <img src="./assets/images/solicomics-logo.svg"
+                        loading="lazy" alt="" class="tse__logo">
+                </a>
+                <img src="./assets/images/logo.svg"
+                    loading="lazy" alt="" class="enter__logo">
+                <a href="javascript:void(0)" onclick="showPopUp('story')" class="enter__button w-inline-block">
+                    <img src="./assets/images/begin.svg"
+                        loading="lazy" alt="" class="enter__button-img">
+                </a>
+                <a data-w-id="a16875fa-2ba4-5d7c-20d1-1709962e6063" href="#"
+                    class="contest-button is--hide w-inline-block">
+                    <img src="./assets/images/contest.svg"
+                        loading="lazy" alt="" class="contest-button__img"></a>
+                <div class="enter__sound-line">
+                    <img src="./assets/images/star.svg"
+                        loading="lazy" alt="" class="enter__sound-icon">
+                    <a href="javascript:void(0)" onclick="showPopUp('scores')" class="enter__sound" style="margin-right: 60px;">SCORES</a>
+                    <img src="./assets/images/tag.svg"
+                        loading="lazy" alt="" class="enter__sound-icon">
+                    <a href="javascript:void(0)" onclick="showPopUp('credits')" class="enter__sound">CREDITS</a>
+                </div>
+
+            </div>
+            <div class="enter__bottom"></div>
+        </div>
+        <div style="filter: blur(0px);" class="overflow">
+            <div class="background"></div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- Sala Principal-->
+    <div id="mainRoom" class="wrap">
+
+        <div style="display:flex" class="enter">
+            
+            <div class="enter__middle">
+
+
+            <h5>Parace ser una sala principal distribuidora.</h5>
+            <h5>Hay 3 puertas accesibles que parecen conducir a otras salas</h5>
+            <h5>Hay una última puerta más abajo pero se encuentra cerrada</h5>
+            <h5>¿Qué debería hacer?</h5>
+
+                <div class="enter__sound-line" style="display: flow-root list-item">
+                    <div style="display: block">
+                        <img src="./assets/images/door.svg" loading="lazy" alt="" class="enter__sound-icon">
+                        <a href="javascript:void(0)" class="enter__sound" onclick="showPopUp('leftRoom')" style="margin-right: 60px;">Entrar por la puerta de la izquierda</a>
+                        <img src="./assets/images/door.svg" loading="lazy" alt="" class="enter__sound-icon">
+                        <a href="javascript:void(0)" class="enter__sound" onclick="showPopUp('rightRoom')">Entrar por la puerta de la derecha</a>
+                    </div>
+                    <br>
+                    <div style="display: block">
+                        <img src="./assets/images/door.svg" loading="lazy" alt="" class="enter__sound-icon">
+                        <a href="javascript:void(0)" class="enter__sound" onclick="showPopUp('centerRoom')">Entrar por la puerta central</a>
+                    </div>
+                </div>
+
+                <div id="secondStage">
+                    <h5>Un gran estruendo suena...</h5>
+                    <h5>Al parecer haber visitado las tres salas ha activado algo</h5>
+                    <h5>Bajo al piso inferior y veo que una nueva cámara se ha habierto</h5>
+                    <h5>¿Debería entar y ver qué hay?</h5>
+                    <div style="display: block">
+                        <img src="./assets/images/door.svg" loading="lazy" alt="" class="enter__sound-icon">
+                        <a href="javascript:void(0)" class="enter__sound">Entrar en la cámara secreta</a>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="enter__bottom">
+                
+            </div>
+        </div>
+        <div>
+            <div class="background"></div>
+        </div>
+
+
+    </div>
+
+    <!-- Sala Izquierda-->
+    <div id="leftRoom" class="wrap">
+
+        <div style="display:flex" class="enter">
+            
+            <div class="enter__middle">
+
+
+            <h5>¡Esta sala está repleta de tesoros!</h5>
+            <h5>Un rayo de luz entra por una grieta del techo</h5>
+            <h5>La luz ilumina una imagen de ofrenda en forma de gato</h5>
+            <h5>¿Será algún tipo de señal?</h5>
+
+                <div class="enter__sound-line" style="display: flow-root list-item">
+                    <div style="display: block">
+                        <img src="./assets/images/door.svg" loading="lazy" alt="" class="enter__sound-icon">
+                        <a href="javascript:void(0)" onclick="showPopUp('mainRoom')" class="enter__sound">Volver a la sala principal</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="enter__bottom"></div>
+        </div>
+        <div>
+            <div class="background"></div>
+        </div>
+
+
+    </div>
+
+    <!-- Sala Central-->
+    <div id="centerRoom" class="wrap">
+
+        <div style="display:flex" class="enter">
+            
+            <div class="enter__middle">
+
+
+            <h5>Es una sala con un sarcófago cerrado</h5>
+            <h5>Hay una inscripción en la pared, por lo que puedo entender pone:</h5>
+            <h5>Dos reyes y un arca bajo tierra se hallan</h5>
+            <h5>Solo con el escarabajo se comienza el camino</h5>
+            <h5>¿Qué querrá decir con eso?</h5>
+
+                <div class="enter__sound-line" style="display: flow-root list-item">
+                    <div style="display: block">
+                        <img src="./assets/images/door.svg" loading="lazy" alt="" class="enter__sound-icon">
+                        <a href="javascript:void(0)" onclick="showPopUp('mainRoom')" class="enter__sound">Volver a la sala principal</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="enter__bottom"></div>
+        </div>
+        <div>
+            <div class="background"></div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Sala Derecha-->
+    <div id="rightRoom" class="wrap">
+
+        <div style="display:flex" class="enter">
+            
+            <div class="enter__middle">
+
+
+            <h5>En esta sala hay un sarcófago abierto con una momia</h5>
+            <h5>Custodiado por dor arcones rematados con siervos de anubis</h5>
+            <h5>Este tipo de distribución parece representar el final de un viaje</h5>
+            <h5>también parece algún tipo de advertencia...</h5>
+            <h5>Si no salgo de aquí, terminaré como la momia...</h5>
+
+                <div class="enter__sound-line" style="display: flow-root list-item">
+                    <div style="display: block">
+                        <img src="./assets/images/door.svg" loading="lazy" alt="" class="enter__sound-icon">
+                        <a href="javascript:void(0)" onclick="showPopUp('mainRoom')" class="enter__sound">Volver a la sala principal</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="enter__bottom"></div>
+        </div>
+        <div>
+            <div class="background"></div>
+        </div>
+
+
+    </div>
+
+<script>
+
+    function showPopUp(id){
+
+       // console.log("Funciona");
+
+        var popUp           = document.getElementById(id);
+        var music           = document.getElementById('music');
+        var welcome         = document.getElementById('welcome');
+        var leftRoom        = document.getElementById('leftRoom');
+        var centerRoom      = document.getElementById('centerRoom');
+        var rightRoom       = document.getElementById('rightRoom');
+        var mainRoomMusic   = document.getElementById('mainRoomMusic');
+        var leftRoomMusic   = document.getElementById('leftRoomMusic');
+        var centerRoomMusic = document.getElementById('centerRoomMusic');
+        var rightRoomMusic  = document.getElementById('rightRoomMusic');
+
+        popUp.style.display = 'revert' ;
+
+        switch(id) {
+
+            case 'story':
+
+                music.play();
+                break;
+
+            case 'mainRoom':
+
+                welcome.style.display = 'none';
+                leftRoom.style.display = 'none';
+                centerRoom.style.display = 'none';
+                rightRoom.style.display = 'none';
+                music.pause();
+                centerRoomMusic.pause();
+                rightRoomMusic.pause();
+                leftRoomMusic.pause();
+                mainRoomMusic.play();
+                break;
+
+            case 'leftRoom':
+
+                mainRoom.style.display = 'none';
+                mainRoomMusic.pause();
+                leftRoomMusic.play();
+                break;
+            
+            case 'centerRoom':
+
+                mainRoom.style.display = 'none';
+                mainRoomMusic.pause();
+                centerRoomMusic.play();
+                break;
+
+            case 'rightRoom':
+
+                mainRoom.style.display = 'none';
+                mainRoomMusic.pause();
+                rightRoomMusic.play();
+                break;
+
+
+        }
+
+
+        /*if(id == 'story') {
+            music.play();
+        } else {
+            music.pause();
+        }
+
+        if (id == 'mainRoom') {
+
+            welcome.style.display = 'none' ;
+            leftRoom.style.display = 'none' ;
+            mainRoomMusic.play();
+            leftRoomMusic.pause();
+
+        }
+
+        if (id == 'leftRoom') {
+
+            mainRoom.style.display = 'none' ;
+            leftRoomMusic.play();
+
+        }*/
+
+    }
+
+    function hidePopUp(id){
+
+        // console.log('Funciona');
+
+        var close = document.getElementById(id);
+
+        close.style.display = 'none' ;
+
+        music.pause();
+
+    }
+
+</script>
+</body>
+
+</html>
