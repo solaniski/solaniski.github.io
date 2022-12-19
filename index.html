@@ -307,7 +307,7 @@
                     </div>
                 </div>
 
-                <div id="secondStage">
+                <div id="secondStage" style="display: none">
                     <h5>Un gran estruendo suena...</h5>
                     <h5>Al parecer haber visitado las tres salas ha activado algo</h5>
                     <h5>Bajo al piso inferior y veo que una nueva cámara se ha habierto</h5>
@@ -428,18 +428,17 @@
 
     function showPopUp(id){
 
-       // console.log("Funciona");
-
-        var popUp           = document.getElementById(id);
-        var music           = document.getElementById('music');
-        var welcome         = document.getElementById('welcome');
-        var leftRoom        = document.getElementById('leftRoom');
-        var centerRoom      = document.getElementById('centerRoom');
-        var rightRoom       = document.getElementById('rightRoom');
-        var mainRoomMusic   = document.getElementById('mainRoomMusic');
-        var leftRoomMusic   = document.getElementById('leftRoomMusic');
-        var centerRoomMusic = document.getElementById('centerRoomMusic');
-        var rightRoomMusic  = document.getElementById('rightRoomMusic');
+        let popUp           = document.getElementById(id);
+        let music           = document.getElementById('music');
+        let welcome         = document.getElementById('welcome');
+        let leftRoom        = document.getElementById('leftRoom');
+        let centerRoom      = document.getElementById('centerRoom');
+        let rightRoom       = document.getElementById('rightRoom');
+        let mainRoomMusic   = document.getElementById('mainRoomMusic');
+        let leftRoomMusic   = document.getElementById('leftRoomMusic');
+        let centerRoomMusic = document.getElementById('centerRoomMusic');
+        let rightRoomMusic  = document.getElementById('rightRoomMusic');
+        let secondStage = document.getElementById('secondStage');
 
         popUp.style.display = 'revert' ;
 
@@ -464,10 +463,10 @@
                 break;
 
             case 'leftRoom':
-
                 mainRoom.style.display = 'none';
                 mainRoomMusic.pause();
                 leftRoomMusic.play();
+                leftRoom.classList.add('visited')
                 break;
             
             case 'centerRoom':
@@ -475,6 +474,7 @@
                 mainRoom.style.display = 'none';
                 mainRoomMusic.pause();
                 centerRoomMusic.play();
+                centerRoom.classList.add('visited')
                 break;
 
             case 'rightRoom':
@@ -482,11 +482,17 @@
                 mainRoom.style.display = 'none';
                 mainRoomMusic.pause();
                 rightRoomMusic.play();
+                rightRoom.classList.add('visited')
                 break;
 
 
         }
 
+        // Desbloquear SecondStage
+
+        if(leftRoom.classList.contains('visited') && centerRoom.classList.contains('visited') && rightRoom.classList.contains('visited')){
+            secondStage.style.display = 'block';
+        }
 
         /*if(id == 'story') {
             music.play();
@@ -514,9 +520,7 @@
 
     function hidePopUp(id){
 
-        // console.log('Funciona');
-
-        var close = document.getElementById(id);
+        let close = document.getElementById(id);
 
         close.style.display = 'none' ;
 
